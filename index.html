@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://mozilla.github.io/nunjucks/files/nunjucks.min.js"></script>
+		<script>
+			window._nunjucks = nunjucks;
+			window.nunjucks = null;
+			window.module = {};
+			window.require = function(id){
+				if(id == "fs"){
+					return {
+						writeFileSync: function(a,b){
+							//window.open("data:text/plain," + b);
+							document.getElementById("out").value = b;
+						},
+						readFileSync: function(a){}
+					};
+				}else if(id == "vm"){
+					return {
+						createContext: function(a){
+							window.ScratchExtensions = {
+								register: a.ScratchExtensions.register
+							}
+						},
+						runInContext: function(a,b){}
+					};
+				}else if(id == "nunjucks"){
+					return window._nunjucks;
+				}
+			}
+		</script>
+		<script src="run.js"></script>
+		<script>
+			module.exports("ext.js", {
+				id: "ext",
+				image_url: null,
+				output_file: null
+			}, function(a){}, function(a){}, function(){})
+		</script>
+	</head>
+	<body>
+		<h1>ScratchX to Scratch3 extension converter</h1>
+		Welcome to Mrcomputer1's ScratchX to Scratch 3.0 Extension
+		<br><br>
+		Before starting please ensure you extension follows these guidelines:<br>
+		1. Inside your extension file everything should be inside functions except for ScratchExtensions.register. Instead place them at ext._init.<br>
+		2. Do not use any calls to ScratchExtensions except for ScratchExtensions.register.<br>
+		3. Not have any important code in _shutdown or _getInfo as they will be removed.<br>
+		4. All inputs (%s, %n, ...) in your block should have a space before and after.
+		<br><br>
+		<ol>
+			<li>Execute your extension's code in your browser's JavaScript console</li>
+			<li>Copy the output from the below textarea</li>
+		</ol>
+		<br><br>
+		<textarea id="out">Output goes here</textarea>
+	</body>
+</html>
