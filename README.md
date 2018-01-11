@@ -22,13 +22,17 @@ Run `node index.js` and follow the instructions.
 Run `node index.js files...`
 
 ## How to convert (Not Easy Way)
-Use `node index.js options... files...`.
+Use `node index.js options... files...`
 
 ### Valid Options
 `--icon`: Change the icon for all converted extensions
+
 `--output or -o`: Change the output file name (can only convert one extension at a time)
+
 `--id`: Change the ID of the extension (can only convert one extension at a time)
+
 `--no-wizard`: Disables the wizard allowing only command line arguments.
+
 `--help`: Displays help message
 
 ## License
