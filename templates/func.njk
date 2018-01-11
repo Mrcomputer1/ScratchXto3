@@ -1,0 +1,4 @@
+Ext{{ id }}.prototype.{{ func.opcode }} = function(args){
+	var inner = {{ func.source }};
+	inner.call({{ func.argstring }});
+};

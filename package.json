@@ -1,0 +1,15 @@
+{
+  "name": "scratchx-to-scratch3",
+  "version": "1.0.0",
+  "description": "ScratchX to Scratch 3.0 extension converter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mrcomputer1",
+  "license": "MIT",
+  "dependencies": {
+    "command-line-args": "^4.0.7",
+    "nunjucks": "^3.0.1"
+  }
+}

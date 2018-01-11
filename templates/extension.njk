@@ -1,0 +1,34 @@
+// Extension converted by Mrcomputer1's ScratchXto3
+// https://mrcomputer1.github.io/ScratchXto3
+
+var Ext{{ id }} = function(){};
+
+Ext{{ id }}.prototype.getInfo = function(){
+	
+	{{ _init }}();
+	
+	return {
+		id: "{{ id }}",
+		name: "{{ name }}",
+		iconURI: "{{ image_url }}",
+		docsURI: "{{ docs_url }}",
+		blocks: [
+			{% for block in blocks %}
+			{% include "block.njk" %}
+			{% endfor %}
+		],
+		menus: {
+			{% for key, val in menus %}
+			{{ key }}: {{ val }},
+			{% endfor %}
+		}
+	};
+	
+};
+
+
+{% for func in funcs %}
+{% include "func.njk" %}
+{% endfor %}
+
+Scratch.extensions.register(new Ext{{ id }}());

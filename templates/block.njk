@@ -1,0 +1,13 @@
+{
+				opcode: "{{ block.opcode }}",
+				blockType: Scratch.BlockType.{{ block.type }},
+				isTerminal: {{ block.terminal }},
+				text: "{{ block.spec }}",
+				arguments: {
+					{% for arg in block.args %}
+					{% include "arg.njk" %}
+					{% endfor %}
+				},
+				func: "{{ block.opcode }}",
+				
+			},
