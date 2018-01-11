@@ -35,5 +35,25 @@ Use `node index.js options... files...`
 
 `--help`: Displays help message
 
+## Contributing
+
+### Files
+
+`index.js`: Main File
+
+`wizard.js`: Wizard
+
+`run.js`: The core of the converter
+
+`help.js`: Message shown for --help
+
+`templates/extension.njk`: Scratch 3 extension template
+
+`templates/block.njk`: Block template
+
+`templates/arg.njk`: Block arg template
+
+`templates/func.njk`: Block function template
+
 ## License
 [MIT License](https://github.com/Mrcomputer1/ScratchXto3/blob/master/LICENSE.md)
