@@ -23,7 +23,7 @@ module.exports = function(ext, opts, success, error, finally_){
 					blocks: [],
 					menus: info.menus,
 					funcs: [],
-					_init: obj._init?obj._init.toString():""
+					_init: obj._init?obj._init.toString():"function(){}"
 				};
 				if(opts.image_url){
 					render.image_url = opts.image_url;
