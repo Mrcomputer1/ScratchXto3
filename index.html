@@ -46,7 +46,8 @@
 		1. Inside your extension file everything should be inside functions except for ScratchExtensions.register. Instead place them at ext._init.<br>
 		2. Do not use any calls to ScratchExtensions except for ScratchExtensions.register.<br>
 		3. Not have any important code in _shutdown or _getInfo as they will be removed.<br>
-		4. All inputs (%s, %n, ...) in your block should have a space before and after.
+		4. All inputs (%s, %n, ...) in your block should have a space before and after.<br>
+		5. Change callback() to return and remove callback from your arguments
 		<br><br>
 		<ol>
 			<li>Execute your extension's code in your browser's JavaScript console</li>

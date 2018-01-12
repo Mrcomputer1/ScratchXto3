@@ -46,6 +46,8 @@ module.exports = function(ext, opts, success, error, finally_){
 					}else if(block[0] == "h"){
 						type = "HAT";
 						terminal = "false";
+					}else if(block[0] == "-"){
+						continue;
 					}
 					text = block[1];
 					var textS = text.split(" ");

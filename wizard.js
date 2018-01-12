@@ -5,6 +5,7 @@ Before starting please ensure you extension follows these guidelines:
 2. Do not use any calls to ScratchExtensions except for ScratchExtensions.register.
 3. Not have any important code in _shutdown or _getInfo as they will be removed.
 4. All inputs (%s, %n, ...) in your block should have a space before and after.
+5. Change callback() to return and remove callback from your arguments
 
 Once you have completed this press enter to start!`;
 var success = `Your extension has been converted and can be found at %0.
