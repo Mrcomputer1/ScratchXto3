@@ -32,7 +32,7 @@ module.exports = function(run){
 				input.question("URL or Data URI for your extension's icon? (n for none)", function(imgurl){
 					run(ext, {
 						id: id,
-						image_url: imgurl=="n"?imgurl:null
+						image_url: imgurl!="n"?imgurl:null
 					}, function(output_file){
 						console.log(success.replace("%0", output_file));
 					}, function(err){

@@ -5,7 +5,7 @@ var Ext{{ id }} = function(){};
 
 Ext{{ id }}.prototype.getInfo = function(){
 	
-	{{ _init }}();
+	({{ _init }})();
 	
 	return {
 		id: "{{ id }}",
@@ -19,7 +19,7 @@ Ext{{ id }}.prototype.getInfo = function(){
 		],
 		menus: {
 			{% for key, val in menus %}
-			{{ key }}: {{ val }},
+			"{{ key }}": {{ val }},
 			{% endfor %}
 		}
 	};

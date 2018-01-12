@@ -16,6 +16,9 @@ module.exports = function(ext, opts, success, error, finally_){
 		ScratchExtensions: {
 			register: function(name, info, obj){
 				
+				for(var menu in info.menus){
+					info.menus[menu] = JSON.stringify(info.menus[menu]);
+				}
 				var render = {
 					id: opts.id,
 					name: name,
