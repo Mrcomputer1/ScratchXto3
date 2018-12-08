@@ -3,6 +3,7 @@ var run = require("./run");
 const options = [
 	{name: "files", type: String, multiple: true, defaultOption: true},
 	{name: "icon", type: String},
+	{name: "menu-icon", type: String},
 	{name: "output", alias: "o", type: String},
 	{name: "id", type: String},
 	{name: "no-wizard", type: Boolean, defaultValue: false},
@@ -29,6 +30,7 @@ if(args.files){
 		run(file, {
 			id: args.id?args.id:file.replace(".js", ""),
 			image_url: args.icon?args.icon:null,
+			menu_image_url: args["menu-icon"]?args["menu-icon"]:null,
 			output_file: args.output
 		}, function(output_file){
 			console.log("Processed " + file + " as " + output_file);

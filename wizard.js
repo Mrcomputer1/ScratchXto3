@@ -31,15 +31,18 @@ module.exports = function(run){
 		input.question("What is the file name of the extension you wish to convert?", function(ext){
 			input.question("What would you like your extension's ID to be? (valid JS variable)", function(id){
 				input.question("URL or Data URI for your extension's icon? (n for none)", function(imgurl){
-					run(ext, {
-						id: id,
-						image_url: imgurl!="n"?imgurl:null
-					}, function(output_file){
-						console.log(success.replace("%0", output_file));
-					}, function(err){
-						console.log(failure.replace("%0", err));
-					}, function(){
-						input.close();
+					input.question("URL or Data URI for your extension's menu icon? (n for none)", function(menuimgurl){
+						run(ext, {
+							id: id,
+							image_url: imgurl!="n"?imgurl:null,
+							menu_image_url: menuimgurl!="n"?menuimgurl:null
+						}, function(output_file){
+							console.log(success.replace("%0", output_file));
+						}, function(err){
+							console.log(failure.replace("%0", err));
+						}, function(){
+							input.close();
+						});
 					});
 				});
 			});

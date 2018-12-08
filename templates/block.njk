@@ -1,8 +1,12 @@
 {
 				opcode: "{{ block.opcode }}",
-				blockType: Scratch.BlockType.{{ block.type }},
+				blockType: "{{ block.type }}",
 				isTerminal: {{ block.terminal }},
-				text: "{{ block.spec }}",
+				text: formatMessage({
+					id: "{{ block.opcode }}.spec",
+					defaultMessage: "{{ block.spec }}",
+					description: "Label of the '{{ block.spec }}' block"
+				}),
 				arguments: {
 					{% for arg in block.args %}
 					{% include "arg.njk" %}

@@ -4,7 +4,7 @@ Converts ScratchX extension to Scratch 3.0.
 
 ## Status
 Should correctly convert into the extension format shown at
-https://github.com/LLK/scratch-gui/blob/develop/src/examples/extensions/example-extension.js
+https://github.com/LLK/scratch-gui/blob/develop/src/examples/extensions/example-extension.js and https://github.com/LLK/scratch-vm/wiki/Scratch-3.0-Extensions-Specification
 
 If anyone knows how to load an extension into Scratch 3 without
 modding it please tell me or if anyone has a up to date fork of
@@ -32,6 +32,8 @@ Use `node index.js options... files...`
 `--id`: Change the ID of the extension (can only convert one extension at a time)
 
 `--no-wizard`: Disables the wizard allowing only command line arguments.
+
+`--menu-icon`: Change the menu icon for all converted extensions
 
 `--help`: Displays help message
 

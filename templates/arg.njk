@@ -1,5 +1,5 @@
 ARG_{{ arg.id }}: {
-						type: Scratch.ArgumentType.{{ arg.type }},
+						type: "{{ arg.type }}",
 						defaultValue: "{{ arg.suggested }}",
 						{% if arg.menu %}menu: "{{ arg.menu }}"{% endif %}
 					},

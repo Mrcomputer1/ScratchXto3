@@ -14,6 +14,7 @@ Options
     -o, --output	Changes the output file (one file at a time)
     --id		Changes the extension ID (one file at a time)
     --icon		Changes the extension icon
+	--menu-icon		Changes the extension menu icon
     --no-wizard		Prevent the wizard mode
 
 Examples

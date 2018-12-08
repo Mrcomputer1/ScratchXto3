@@ -31,21 +31,28 @@ module.exports = function(ext, opts, success, error, finally_){
 				if(opts.image_url){
 					render.image_url = opts.image_url;
 				}
+				if(opts.menu_image_url){
+					render.image_url_menu = opts.menu_image_url;
+				}
 				for(var block of info.blocks){
-					var type, terminal, text, func;
+					var type, terminal, isAsync, text, func;
 					var args = [];
 					if(block[0] == " " || block[0] == "w"){
-						type = "COMMAND";
+						type = "command";
 						terminal = "false";
+						isAsync = block[0] == "w";
 					}else if(block[0] == "r" || block[0] == "R"){
-						type = "REPORTER";
+						type = "reporter";
 						terminal = "false";
+						isAsync = block[0] == "R";
 					}else if(block[0] == "b"){
-						type = "BOOLEAN";
+						type = "Boolean";
 						terminal = "false";
+						isAsync = false;
 					}else if(block[0] == "h"){
-						type = "HAT";
+						type = "hat";
 						terminal = "false";
+						isAsync = false;
 					}else if(block[0] == "-"){
 						continue;
 					}
@@ -59,21 +66,21 @@ module.exports = function(ext, opts, success, error, finally_){
 							textS1 = textS1.replace("%", "");
 							if(textS1 == "s"){
 								args.push({
-									type: "STRING",
+									type: "string",
 									suggested: block[i+3] ? block[i+3]:"",
 									id: args.length
 								});
 								textS1 = "[ARG_" + (args.length-1) + "]";
 							}else if(textS1 == "n"){
 								args.push({
-									type: "NUMBER",
+									type: "number",
 									suggested: block[i+3] ? block[i+3]:"",
 									id: args.length
 								});
 								textS1 = "[ARG_" + (args.length-1) + "]";
 							}else if(textS1 == "b"){
 								args.push({
-									type: "BOOLEAN",
+									type: "boolean",
 									suggested: block[i+3] ? block[i+3]:"",
 									id: args.length
 								});
@@ -81,7 +88,7 @@ module.exports = function(ext, opts, success, error, finally_){
 							}else if(textS1.startsWith("m.")){
 								var menu = textS1.replace("m.", "");
 								args.push({
-									type: "STRING",
+									type: "string",
 									suggested: block[i+3] ? block[i+3]:"",
 									id: args.length,
 									menu: menu
@@ -102,7 +109,8 @@ module.exports = function(ext, opts, success, error, finally_){
 						terminal: terminal,
 						spec: text,
 						args: args,
-						func: func
+						func: func,
+						isAsync: isAsync
 					});
 				}
 				for(var block of render.blocks){

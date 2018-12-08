@@ -1,7 +1,9 @@
 // Extension converted by Mrcomputer1's ScratchXto3
 // https://mrcomputer1.github.io/ScratchXto3
 
-var Ext{{ id }} = function(){};
+var Ext{{ id }} = function(runtimeProxy){
+	this.runtime = runtimeProxy;
+};
 
 Ext{{ id }}.prototype.getInfo = function(){
 	
@@ -9,8 +11,13 @@ Ext{{ id }}.prototype.getInfo = function(){
 	
 	return {
 		id: "{{ id }}",
-		name: "{{ name }}",
-		iconURI: "{{ image_url }}",
+		name: formatMessage({
+			id: "extensionName",
+			defaultMessage: "{{ name }}",
+			description: "Extension Name"
+		}),
+		blockIconURI: "{{ image_url }}",
+		menuIconURI: "{{ image_url_menu }}",
 		docsURI: "{{ docs_url }}",
 		blocks: [
 			{% for block in blocks %}
@@ -28,7 +35,11 @@ Ext{{ id }}.prototype.getInfo = function(){
 
 
 {% for func in funcs %}
+{% if func.isAsync %}
+{% include "func_async.njk" %}
+{% else %}
 {% include "func.njk" %}
+{% endif %}
 {% endfor %}
 
 Scratch.extensions.register(new Ext{{ id }}());

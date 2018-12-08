@@ -1,0 +1,7 @@
+Ext{{ id }}.prototype.{{ func.opcode }} = function(args){
+	var inner = {{ func.source }};
+	var promise = new Promise(function(resolve){
+		resolve(inner({{ func.argstring }}));
+	});
+	return promise;
+};
