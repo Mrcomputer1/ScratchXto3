@@ -6,9 +6,7 @@ Converts ScratchX extension to Scratch 3.0.
 Should correctly convert into the extension format shown at
 https://github.com/LLK/scratch-gui/blob/develop/src/examples/extensions/example-extension.js and https://github.com/LLK/scratch-vm/wiki/Scratch-3.0-Extensions-Specification
 
-If anyone knows how to load an extension into Scratch 3 without
-modding it please tell me or if anyone has a up to date fork of
-Scratch 3 on GHPages that allows loading an extension easily.
+This Scratch 3.0 mod should be able to load extensions by URL: https://sheeptester.github.io/scratch-gui/ by Sheep_maker/SheepTester.
 
 ## Setup
 1. `git clone https://github.com/Mrcomputer1/ScratchXto3`
