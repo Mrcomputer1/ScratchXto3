@@ -8,7 +8,7 @@ https://github.com/LLK/scratch-gui/blob/develop/src/examples/extensions/example-
 
 This Scratch 3.0 mod should be able to load extensions by URL: https://sheeptester.github.io/scratch-gui/ by Sheep_maker/SheepTester.
 
-## Setup
+## Quick Setup
 1. `git clone https://github.com/Mrcomputer1/ScratchXto3`
 2. `cd ScratchXto3`
 2. `npm install`
