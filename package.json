@@ -10,6 +10,6 @@
   "license": "MIT",
   "dependencies": {
     "command-line-args": "^4.0.7",
-    "nunjucks": "^3.2.0"
+    "nunjucks": "^3.2.4"
   }
 }
